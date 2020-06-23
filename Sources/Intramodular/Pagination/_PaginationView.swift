@@ -171,16 +171,17 @@ extension _PaginationView {
             _ pageViewController: UIPageViewController,
             viewControllerBefore viewController: UIViewController
         ) -> UIViewController? {
-            let pageViewController = pageViewController as! UIViewControllerType
-            
-            return pageViewController
-                .allViewControllers
-                .firstIndex(of: viewController as! UIHostingController<Page>)
-                .flatMap({
-                    $0 == 0
-                        ? (parent.cyclesPages ? pageViewController.allViewControllers.last : nil)
-                        : pageViewController.allViewControllers[$0 - 1]
-                })
+            return nil
+//            let pageViewController = pageViewController as! UIViewControllerType
+//
+//            return pageViewController
+//                .allViewControllers
+//                .firstIndex(of: viewController as! UIHostingController<Page>)
+//                .flatMap({
+//                    $0 == 0
+//                        ? (parent.cyclesPages ? pageViewController.allViewControllers.last : nil)
+//                        : pageViewController.allViewControllers[$0 - 1]
+//                })
         }
         
         func pageViewController(
@@ -243,16 +244,16 @@ extension _PaginationView {
             viewControllerAfter viewController: UIViewController
         ) -> UIViewController? {
             let pageViewController = pageViewController as! UIViewControllerType
-            
-            return pageViewController
-                .allViewControllers
-                .firstIndex(of: viewController as! UIHostingController<Page>)
-                .flatMap {
-                    let viewController = $0 + 1 == pageViewController.allViewControllers.count
-                                                ? (parent.cyclesPages ? pageViewController.allViewControllers.first : nil)
-                                                : pageViewController.allViewControllers[$0 + 1]
-                    return viewController
-                }
+            return nil
+//            return pageViewController
+//                .allViewControllers
+//                .firstIndex(of: viewController as! UIHostingController<Page>)
+//                .flatMap {
+//                    let viewController = $0 + 1 == pageViewController.allViewControllers.count
+//                                                ? (parent.cyclesPages ? pageViewController.allViewControllers.first : nil)
+//                                                : pageViewController.allViewControllers[$0 + 1]
+//                    return viewController
+//                }
         }
         
         func pageViewController(
